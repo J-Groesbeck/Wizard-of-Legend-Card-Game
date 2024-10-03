@@ -1,0 +1,25 @@
+body {
+    background-image: url(../img/title-screen.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
+.container {
+    position: relative;
+    top: 39vw;
+    color: #999999;
+}
+
+.col-12 {
+    height: 1.85rem;
+}
+
+a {
+    color: #999999 !important;
+    text-decoration: none !important;
+}
+
+#modal1 {
+    font-family: var(--bs-body-font-family) !important;
+}

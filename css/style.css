@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'VPPixel';
+    src: url('../fonts/VPPixel-Simplified.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'VPPixel', sans-serif !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
