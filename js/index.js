@@ -17,7 +17,7 @@ $('.options').on('mouseenter', function () {
         color: 'white'
     })
     if (sfxMuted === false) {
-        let snd = new Audio("../audio/index/hover.wav");
+        let snd = new Audio("/audio/index/hover.wav");
         snd.play();
     }
 })
@@ -50,7 +50,7 @@ $('#mute-sfx').on('click', function () {
 
 $('.options').on('click', function () {
     if (sfxMuted === false) {
-        let snd = new Audio("../audio/index/click.wav");
+        let snd = new Audio("/audio/index/click.wav");
         snd.play();
     }
 })
@@ -60,20 +60,20 @@ if (localStorage.getItem('music-muted')) {
     musicMuted = localStorage.getItem('music-muted') === 'true'
     if (musicMuted === true) {
         $('#mute-music').text('Unmute Music')
-        document.getElementById('background-music').volume = 0;
+        bgm.volume = 0;
     } else {
         $('#mute-music').text('Mute Music')
-        document.getElementById('background-music').volume = 0.1;
+        bgm.volume = 0.1;
     }
 }
 
 $('#mute-music').on('click', function () {
     if (musicMuted === false) {
         $('#mute-music').text('Unmute Music')
-        document.getElementById('background-music').volume = 0;
+        bgm.volume = 0;
     } else {
         $('#mute-music').text('Mute Music')
-        document.getElementById('background-music').volume = 0.1;
+        bgm.volume = 0.1;
     }
     musicMuted = !musicMuted
 })
