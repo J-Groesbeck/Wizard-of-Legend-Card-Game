@@ -17,7 +17,7 @@ $('.options').on('mouseenter', function () {
         color: 'white'
     })
     if (sfxMuted === false) {
-        let snd = new Audio("/audio/index/hover.wav");
+        let snd = new Audio("audio/index/hover.wav");
         snd.play();
     }
 })
@@ -50,7 +50,7 @@ $('#mute-sfx').on('click', function () {
 
 $('.options').on('click', function () {
     if (sfxMuted === false) {
-        let snd = new Audio("/audio/index/click.wav");
+        let snd = new Audio("audio/index/click.wav");
         snd.play();
     }
 })
