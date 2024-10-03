@@ -6,10 +6,21 @@ document.addEventListener("DOMContentLoaded", function () {
     myModal.show();
 });
 
-let bgm1 = document.getElementById('background-music1')
+let bgmSelection = document.getElementById('background-music-selection')
 
 $('#modal-btn').on('click', function () {
     if (musicMuted === false) {
-        bgm1.play()
+        bgmSelection.play()
+        bgmSelection.volume = 1.0
     }
+})
+
+$('#relic-desc1').hide()
+
+$('#relic1').on('mouseenter', function() {
+    $('#relic-desc1').show()
+})
+
+$('#relic1').on('mouseleave', function() {
+    $('#relic-desc1').hide()
 })

@@ -1,3 +1,49 @@
 #modal1 {
     font-family: var(--bs-body-font-family) !important;
 }
+
+.row {
+    height: 30vh;
+    margin-top: 2.5vh !important;
+}
+
+.shop-img {
+    height: 29vh;
+    padding: 0.5vh;
+}
+
+.scales-cost {
+    height: 5vh;
+    vertical-align: top;
+}
+
+#cost1 {
+    font-size: 3.5vh;
+}
+
+.relic-options {
+    height: 20vh;
+}
+
+#relic-name1 {
+    height: 5vh;
+    font-size: 3.5vh;
+}
+
+#relic-desc1 {
+    position: relative;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+#relic-desc1::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+}
