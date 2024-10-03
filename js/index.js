@@ -30,6 +30,14 @@ $('.options').on('mouseleave', function () {
 })
 
 let sfxMuted = false
+if (localStorage.getItem('sfx-muted')) {
+    sfxMuted = localStorage.getItem('sfx-muted') === 'true'
+    if (sfxMuted === true) {
+        $('#mute-sfx').text('Unmute SFX')
+    } else {
+        $('#mute-sfx').text('Mute SFX')
+    }
+}
 
 $('#mute-sfx').on('click', function () {
     if (sfxMuted === false) {
@@ -48,13 +56,23 @@ $('.options').on('click', function () {
 })
 
 let musicMuted = false
+if (localStorage.getItem('music-muted')) {
+    musicMuted = localStorage.getItem('music-muted') === 'true'
+    if (musicMuted === true) {
+        $('#mute-music').text('Unmute Music')
+        document.getElementById('background-music').volume = 0;
+    } else {
+        $('#mute-music').text('Mute Music')
+        document.getElementById('background-music').volume = 0.1;
+    }
+}
 
 $('#mute-music').on('click', function () {
     if (musicMuted === false) {
-        $('#mute-music').text('Unmute SFX')
+        $('#mute-music').text('Unmute Music')
         document.getElementById('background-music').volume = 0;
     } else {
-        $('#mute-music').text('Mute SFX')
+        $('#mute-music').text('Mute Music')
         document.getElementById('background-music').volume = 0.1;
     }
     musicMuted = !musicMuted
