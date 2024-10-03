@@ -11,17 +11,6 @@ $('#modal-btn').on('click', function () {
 
 bgm.volume = 0.1;
 
-$('.options').on('mouseenter', function () {
-    $(this).css({
-        fontSize: '1.85rem',
-        color: 'white'
-    })
-    if (sfxMuted === false) {
-        let snd = new Audio("audio/index/hover.wav");
-        snd.play();
-    }
-})
-
 $('.options').on('mouseleave', function () {
     $(this).css({
         fontSize: 'calc(1.3rem + .6vw)',
@@ -46,13 +35,6 @@ $('#mute-sfx').on('click', function () {
         $('#mute-sfx').text('Mute SFX')
     }
     sfxMuted = !sfxMuted
-})
-
-$('.options').on('click', function () {
-    if (sfxMuted === false) {
-        let snd = new Audio("audio/index/click.wav");
-        snd.play();
-    }
 })
 
 let musicMuted = false
