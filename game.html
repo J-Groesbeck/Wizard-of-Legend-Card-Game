@@ -33,29 +33,75 @@
         <div class="row text-center">
             <div class="col-2"><img src="img/relic-curator.png" class="shop-img"></div>
             <div id="relic1" class="col-2">
-                <div><img src="img/Gold.webp" class="scales-cost"><span id="cost1">100</span></div>
-                <img class="relic-options" src="img/relics/Museum_Ticket.png">
-                <div id="relic-name1">Museum Ticket</div>
-                <div id="relic-desc1">A ticket to Lanova Museum's newly opened Chaos Trials exhibit!</div>
+                <div><img src="img/Gold.webp" class="scales-cost"><span id="relic-cost1" class="costs"></span></div>
+                <img class="relic-img" id="relic-img1" src="">
+                <div class="relic-names" id="relic-name1">Name</div>
+                <div class="relic-descs" id="relic-desc1">Description</div>
             </div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
+            <div id="relic2" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span id="relic-cost2" class="costs"></span></div>
+                <img class="relic-img" id="relic-img2" src="">
+                <div class="relic-names" id="relic-name2">Name</div>
+                <div class="relic-descs" id="relic-desc2">Description</div>
+            </div>
+            <div id="relic3" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span id="relic-cost3" class="costs"></span></div>
+                <img class="relic-img" id="relic-img3" src="">
+                <div class="relic-names" id="relic-name3">Name</div>
+                <div class="relic-descs" id="relic-desc3">Description</div>
+            </div>
+            <div id="relic4" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span id="relic-cost4" class="costs"></span></div>
+                <img class="relic-img" id="relic-img4" src="">
+                <div class="relic-names" id="relic-name4">Name</div>
+                <div class="relic-descs" id="relic-desc4">Description</div>
+            </div>
+            <div id="healing" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span class="costs">100</span></div>
+                <img class="relic-img" src="img/relics/Healing_Potion.png">
+                <div class="relic-names">Healing Potion</div>
+                <div class="relic-descs" id="healing-desc">Restores <span id="healing-amt">40</span>% of your maximum
+                    HP! Decreases in effectiveness each time you buy one.</div>
+            </div>
         </div>
         <div class="row text-center">
             <div class="col-2"><img src="img/arcana-painter.png" class="shop-img"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
+            <div class="col-2">
+                <img class="arcana-img" src="img/relics/Healing_Potion.png">
+                <div class="cursed-relic-descs" id="cursed-relic-desc1">Description</div>
+            </div>
+            <div class="col-2">
+                <img class="arcana-img" src="img/relics/Healing_Potion.png">
+                <div class="cursed-relic-descs" id="cursed-relic-desc2">Description</div>
+            </div>
+            <div class="col-2">
+                <img class="arcana-img" src="img/relics/Healing_Potion.png">
+                <div class="cursed-relic-descs" id="cursed-relic-desc3">Description</div>
+            </div>
+            <div class="col-2">
+                <img class="arcana-img" src="img/relics/Healing_Potion.png">
+            </div>
+            <div class="col-2">
+                <img class="arcana-img" src="img/relics/Healing_Potion.png">
+            </div>
         </div>
         <div class="row text-center">
             <div class="col-2"><img src="img/cursed-relic-dealer.png" class="shop-img"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
+            <div id="cursed-relic1" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span class="costs">25</span></div>
+                <img class="relic-img" id="cursed-relic-img1" src="">
+                <div class="relic-names" id="cursed-relic-name1">Name</div>
+            </div>
+            <div id="cursed-relic2" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span class="costs">25</span></div>
+                <img class="relic-img" id="cursed-relic-img2" src="">
+                <div class="relic-names" id="cursed-relic-name2">Name</div>
+            </div>
+            <div id="cursed-relic3" class="col-2">
+                <div><img src="img/Gold.webp" class="scales-cost"><span class="costs">25</span></div>
+                <img class="relic-img" id="cursed-relic-img3" src="">
+                <div class="relic-names" id="cursed-relic-name3">Name</div>
+            </div>
             <div class="col-2"></div>
             <div class="col-2"></div>
         </div>
@@ -66,11 +112,11 @@
     </audio>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="js/game.js"></script>
     <script src="js/arcanaData.js"></script>
     <script src="js/bossData.js"></script>
     <script src="js/enemyData.js"></script>
     <script src="js/relicData.js"></script>
+    <script src="js/game.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -757,7 +757,7 @@ let relics = [
     },
     {
         name: `Tozy's Pocket Watch`,
-        img: 'Tozy_Pocket_Watch.png',
+        img: 'Tozys_Pocket_Watch.png',
         cost: 175,
         description: '',
     },
@@ -871,7 +871,7 @@ let relics = [
     },
     {
         name: `Cushioned Flip-flops`,
-        img: 'Cushioned_Flip_flops.png',
+        img: 'Cushioned_Flip-flops.png',
         cost: 200,
         description: '',
     },
@@ -1117,7 +1117,7 @@ let relics = [
     },
     {
         name: `Sano's Headband`,
-        img: 'Sanost_Headband.png',
+        img: 'Sanos_Headband.png',
         cost: 125,
         description: '',
     },
@@ -1633,7 +1633,7 @@ let cursedRelics = [
     },
     {
         name: `Titan's Equilibrium`,
-        img: 'Titan_Equilibrium.png',
+        img: 'Titans_Equilibrium.png',
         cost: 25,
         description: '',
     },
