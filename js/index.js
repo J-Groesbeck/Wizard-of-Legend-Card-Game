@@ -13,7 +13,7 @@ bgm.volume = 0.1;
 
 $('.options').on('mouseleave', function () {
     $(this).css({
-        fontSize: 'calc(1.3rem + .6vw)',
+        fontSize: '1.8rem',
         color: '#999999'
     })
 })

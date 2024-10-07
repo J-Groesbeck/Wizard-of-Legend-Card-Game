@@ -23,3 +23,7 @@ a {
 #modal1 {
     font-family: var(--bs-body-font-family) !important;
 }
+
+.options {
+    font-size: 1.8rem;
+}
