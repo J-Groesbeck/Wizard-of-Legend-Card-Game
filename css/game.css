@@ -18,7 +18,7 @@
 }
 
 .costs {
-    font-size: 2.75vh;
+    font-size: 3.25vh;
 }
 
 .relic-img {
@@ -70,4 +70,16 @@
 .arcana-img {
     height: 30vh;
     width: 100%;
+}
+
+.buy-prompts {
+    position: absolute;
+    z-index: 99;
+    top: 15vh;
+}
+
+.cursed-buy-prompts {
+    position: absolute;
+    z-index: 99;
+    top: 80vh;
 }

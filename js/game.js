@@ -16,96 +16,126 @@ $('#modal-btn').on('click', function () {
 })
 
 $('#relic-desc1').hide()
+$('#buy-prompt1').hide()
 
 $('#relic1').on('mouseenter', function () {
     $('#relic-desc1').show()
+    $('#buy-prompt1').show()
 })
 
 $('#relic1').on('mouseleave', function () {
     $('#relic-desc1').hide()
+    $('#buy-prompt1').hide()
 })
 
 $('#relic-desc2').hide()
+$('#buy-prompt2').hide()
 
 $('#relic2').on('mouseenter', function () {
     $('#relic-desc2').show()
+    $('#buy-prompt2').show()
 })
 
 $('#relic2').on('mouseleave', function () {
     $('#relic-desc2').hide()
+    $('#buy-prompt2').hide()
 })
 
 $('#relic-desc3').hide()
+$('#buy-prompt3').hide()
 
 $('#relic3').on('mouseenter', function () {
     $('#relic-desc3').show()
+    $('#buy-prompt3').show()
 })
 
 $('#relic3').on('mouseleave', function () {
     $('#relic-desc3').hide()
+    $('#buy-prompt3').hide()
 })
 
 $('#relic-desc4').hide()
+$('#buy-prompt4').hide()
 
 $('#relic4').on('mouseenter', function () {
     $('#relic-desc4').show()
+    $('#buy-prompt4').show()
 })
 
 $('#relic4').on('mouseleave', function () {
     $('#relic-desc4').hide()
+    $('#buy-prompt4').hide()
 })
 
 $('#healing-desc').hide()
+$('#buy-prompt5').hide()
 
 $('#healing').on('mouseenter', function () {
     $('#healing-desc').show()
+    $('#buy-prompt5').show()
 })
 
 $('#healing').on('mouseleave', function () {
     $('#healing-desc').hide()
+    $('#buy-prompt5').hide()
 })
 
 
 
 $('#cursed-relic-desc1').hide()
+$('#buy-prompt6').hide()
 
 $('#cursed-relic1').on('mouseenter', function () {
     $('#cursed-relic-desc1').show()
+    $('#buy-prompt6').show()
 })
 
 $('#cursed-relic1').on('mouseleave', function () {
     $('#cursed-relic-desc1').hide()
+    $('#buy-prompt6').hide()
 })
 
 $('#cursed-relic-desc2').hide()
+$('#buy-prompt7').hide()
 
 $('#cursed-relic2').on('mouseenter', function () {
     $('#cursed-relic-desc2').show()
+    $('#buy-prompt7').show()
 })
 
 $('#cursed-relic2').on('mouseleave', function () {
     $('#cursed-relic-desc2').hide()
+    $('#buy-prompt7').hide()
 })
 
 $('#cursed-relic-desc3').hide()
+$('#buy-prompt8').hide()
 
 $('#cursed-relic3').on('mouseenter', function () {
     $('#cursed-relic-desc3').show()
+    $('#buy-prompt8').show()
 })
 
 $('#cursed-relic3').on('mouseleave', function () {
     $('#cursed-relic-desc3').hide()
+    $('#buy-prompt8').hide()
 })
 
+
+
 $('#doctor-relic-desc').hide()
+$('#buy-prompt9').hide()
 
 $('#doctor-relic').on('mouseenter', function () {
     $('#doctor-relic-desc').show()
+    $('#buy-prompt9').show()
 })
 
 $('#doctor-relic').on('mouseleave', function () {
     $('#doctor-relic-desc').hide()
+    $('#buy-prompt5').hide()
 })
+
 let relicDeck = []
 
 function shuffleRelics() {
