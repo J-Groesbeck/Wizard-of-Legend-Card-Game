@@ -1223,43 +1223,43 @@ let doctorRelics = [
     {
         name: `Catalystic Tonic`,
         img: 'Catalystic_Tonic.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     },
     {
         name: `Critical Placebos`,
         img: 'Critical_Placebos.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     },
     {
         name: `Elixir of Might`,
         img: 'Elixir_of_Might.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     },
     {
         name: `Health Care Card`,
         img: 'Health_Care_Card.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     },
     {
         name: `Messy Prescription`,
         img: 'Messy_Prescription.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     },
     {
         name: `Prescription Bottle`,
         img: 'Prescription_Bottle.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     },
     {
         name: `Renewing Potion Vial`,
         img: 'Renewing_Potion_Vial.png',
-        cost: 150,
+        cost: '1 Random Arcana',
         description: '',
     }
 ]

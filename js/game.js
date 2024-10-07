@@ -97,6 +97,15 @@ $('#cursed-relic3').on('mouseleave', function () {
     $('#cursed-relic-desc3').hide()
 })
 
+$('#doctor-relic-desc').hide()
+
+$('#doctor-relic').on('mouseenter', function () {
+    $('#doctor-relic-desc').show()
+})
+
+$('#doctor-relic').on('mouseleave', function () {
+    $('#doctor-relic-desc').hide()
+})
 let relicDeck = []
 
 function shuffleRelics() {
@@ -120,6 +129,21 @@ function shuffleCursedRelics() {
     }
 }
 shuffleCursedRelics()
+
+let doctorRelicDeck = []
+
+function shuffleDoctorRelics() {
+    let doctorRelicAmount = doctorRelics.length
+    for (let i = 0; i < doctorRelicAmount; i++) {
+        let k = Math.floor(Math.random() * doctorRelics.length);
+        doctorRelicDeck.push(doctorRelics[k]);
+        doctorRelics.splice(k, 1);
+    }
+}
+shuffleCursedRelics()
+
+let cloakUpgraded = false
+let eventNumber
 
 function refreshShop() {
     //relics
@@ -148,6 +172,25 @@ function refreshShop() {
         cursedRelicDeck.splice(0, 1);
     }
     //events
-
+    if (cloakUpgraded === false) {
+        eventNumber = Math.floor(Math.random() * 2)
+    } else  {
+        eventNumber = 1
+    }
+    if (eventNumber === 0) {
+        $('#event-img').attr('src', '/img/Tailor.png')
+        $('#doctor-relic').hide()
+    } else if (eventNumber === 1) {
+        $('#event-img').attr('src', '/img/Doctor.png')
+        $('#doctor-relic').show()
+        if (doctorRelicDeck.length === 0) {
+            shuffleDoctorRelics()
+        }
+        $(`#doctor-relic-img`).attr('src', `/img/relics/${doctorRelicDeck[0].img}`)
+        $(`#doctor-relic-name`).text(doctorRelicDeck[0].name)
+        $(`#doctor-relic-desc`).text(doctorRelicDeck[0].description)
+        doctorRelics.push(doctorRelicDeck[0]);
+        doctorRelicDeck.splice(0, 1);
+    }
 }
 refreshShop()
