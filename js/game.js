@@ -134,7 +134,7 @@ $(document).ready(function () {
 
     $('#doctor-relic').on('mouseleave', function () {
         $('#doctor-relic-desc').hide()
-        $('#buy-prompt5').hide()
+        $('#buy-prompt9').hide()
     })
 
     let relicDeck = []
