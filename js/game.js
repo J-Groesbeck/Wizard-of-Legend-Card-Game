@@ -183,7 +183,7 @@ $(document).ready(function () {
         }
         for (let i = 1; i < 5; i++) {
             $(`#relic-cost${i}`).text(relicDeck[0].cost)
-            $(`#relic-img${i}`).attr('src', `img/relics/${relicDeck[0].img}`)
+            $(`#relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${relicDeck[0].img}`)
             $(`#relic-name${i}`).text(relicDeck[0].name)
             $(`#relic-desc${i}`).text(relicDeck[0].description)
             relics.push(relicDeck[0]);
@@ -196,7 +196,7 @@ $(document).ready(function () {
             shuffleCursedRelics()
         }
         for (let i = 1; i < 4; i++) {
-            $(`#cursed-relic-img${i}`).attr('src', `img/relics/${cursedRelicDeck[0].img}`)
+            $(`#cursed-relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${cursedRelicDeck[0].img}`)
             $(`#cursed-relic-name${i}`).text(cursedRelicDeck[0].name)
             $(`#cursed-relic-desc${i}`).text(cursedRelicDeck[0].description)
             cursedRelics.push(cursedRelicDeck[0]);
@@ -209,15 +209,15 @@ $(document).ready(function () {
             eventNumber = 1
         }
         if (eventNumber === 0) {
-            $('#event-img').attr('src', 'img/Tailor.png')
+            $('#event-img').attr('src', 'https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/Tailor.png')
             $('#doctor-relic').hide()
         } else if (eventNumber === 1) {
-            $('#event-img').attr('src', 'img/Doctor.png')
+            $('#event-img').attr('src', 'https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/Doctor.png')
             $('#doctor-relic').show()
             if (doctorRelicDeck.length === 0) {
                 shuffleDoctorRelics()
             }
-            $(`#doctor-relic-img`).attr('src', `img/relics/${doctorRelicDeck[0].img}`)
+            $(`#doctor-relic-img`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${doctorRelicDeck[0].img}`)
             $(`#doctor-relic-name`).text(doctorRelicDeck[0].name)
             $(`#doctor-relic-desc`).text(doctorRelicDeck[0].description)
             doctorRelics.push(doctorRelicDeck[0]);
