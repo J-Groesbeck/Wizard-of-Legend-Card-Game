@@ -209,10 +209,10 @@ $(document).ready(function () {
             eventNumber = 1
         }
         if (eventNumber === 0) {
-            $('#event-img').attr('src', 'https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/Tailor.png')
+            $('#event-img').attr('src', 'https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/Tailor.png')
             $('#doctor-relic').hide()
         } else if (eventNumber === 1) {
-            $('#event-img').attr('src', 'https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/Doctor.png')
+            $('#event-img').attr('src', 'https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/Doctor.png')
             $('#doctor-relic').show()
             if (doctorRelicDeck.length === 0) {
                 shuffleDoctorRelics()
