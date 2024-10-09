@@ -16,80 +16,34 @@ $(document).ready(function () {
         }
     })
 
-    $('#relic-desc1').hide()
-    $('#buy-prompt1').hide()
+    let relicBought = [false, false, false, false]
 
-    $('#relic1').on('mouseenter', function () {
-        $('#relic-desc1').show()
-        $('#buy-prompt1').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                $(`#relic-img1`).attr('src', `/img/empty_slot.png`)
-                $(`#relic-name1`).text('(Empty)')
-                $(`#relic-desc1`).text('')
-                $('#relic-desc1').hide()
-                $(document).off('keyup');
+    for (let i = 1; i < 5; i++) {
+        $(`#relic-desc${i}`).hide()
+        $(`#buy-prompt${i}`).hide()
+        $(`#relic${i}`).on('mouseenter', function () {
+            if (relicBought[(i - 1)] === false) {
+                $(`#relic-desc${i}`).show()
+                $(`#buy-prompt${i}`).show()
             }
+            $(document).on('keyup', function (e) {
+                if (e.key === 'f') {
+                    $(`#relic-cost${i}`).text('X')
+                    $(`#relic-img${i}`).attr('src', `/img/empty_slot.png`)
+                    $(`#relic-name${i}`).text('(Empty)')
+                    $(`#relic-desc${i}`).text('')
+                    $(`#relic-desc${i}`).hide()
+                    $(`#buy-prompt${i}`).hide()
+                    $(document).off('keyup');
+                    relicBought[(i - 1)] = true
+                }
+            })
+        }).on('mouseleave', function () {
+            $(`#relic-desc${i}`).hide()
+            $(`#buy-prompt${i}`).hide()
+            $(document).off('keyup');
         })
-    }).on('mouseleave', function () {
-        $('#relic-desc1').hide()
-        $('#buy-prompt1').hide()
-        $(document).off('keyup');
-    })
-
-    $('#relic-desc2').hide()
-    $('#buy-prompt2').hide()
-
-    $('#relic2').on('mouseenter', function () {
-        $('#relic-desc2').show()
-        $('#buy-prompt2').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
-            }
-        })
-    }).on('mouseleave', function () {
-        $('#relic-desc2').hide()
-        $('#buy-prompt2').hide()
-        $(document).off('keyup');
-    })
-
-    $('#relic-desc3').hide()
-    $('#buy-prompt3').hide()
-
-    $('#relic3').on('mouseenter', function () {
-        $('#relic-desc3').show()
-        $('#buy-prompt3').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
-            }
-        })
-    }).on('mouseleave', function () {
-        $('#relic-desc3').hide()
-        $('#buy-prompt3').hide()
-        $(document).off('keyup');
-    })
-
-    $('#relic-desc4').hide()
-    $('#buy-prompt4').hide()
-
-    $('#relic4').on('mouseenter', function () {
-        $('#relic-desc4').show()
-        $('#buy-prompt4').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
-            }
-        })
-    }).on('mouseleave', function () {
-        $('#relic-desc4').hide()
-        $('#buy-prompt4').hide()
-        $(document).off('keyup');
-    })
+    }
 
     $('#healing-desc').hide()
     $('#buy-prompt5').hide()
@@ -99,8 +53,7 @@ $(document).ready(function () {
         $('#buy-prompt5').show()
         $(document).on('keyup', function (e) {
             if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
+
             }
         })
     }).on('mouseleave', function () {
@@ -109,74 +62,54 @@ $(document).ready(function () {
         $(document).off('keyup');
     })
 
+    let cursedRelicBought = [false, false, false]
 
-
-    $('#cursed-relic-desc1').hide()
-    $('#buy-prompt6').hide()
-
-    $('#cursed-relic1').on('mouseenter', function () {
-        $('#cursed-relic-desc1').show()
-        $('#buy-prompt6').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
+    for (let i = 1; i < 4; i++) {
+        $(`#cursed-relic-desc${i}`).hide()
+        $(`#buy-prompt${i + 5}`).hide()
+        $(`#cursed-relic${i}`).on('mouseenter', function () {
+            if (cursedRelicBought[(i - 1)] === false) {
+                $(`#cursed-relic-desc${i}`).show()
+                $(`#buy-prompt${i + 5}`).show()
             }
+            $(document).on('keyup', function (e) {
+                if (e.key === 'f') {
+                    $(`#cursed-relic-cost${i}`).text('X')
+                    $(`#cursed-relic-img${i}`).attr('src', `/img/empty_slot.png`)
+                    $(`#cursed-relic-name${i}`).text('(Empty)')
+                    $(`#cursed-relic-desc${i}`).text('')
+                    $(`#cursed-relic-desc${i}`).hide()
+                    $(`#buy-prompt${i + 5}`).hide()
+                    $(document).off('keyup');
+                    cursedRelicBought[(i - 1)] = true
+                }
+            })
+        }).on('mouseleave', function () {
+            $(`#cursed-relic-desc${i}`).hide()
+            $(`#buy-prompt${i + 5}`).hide()
+            $(document).off('keyup');
         })
-    }).on('mouseleave', function () {
-        $('#cursed-relic-desc1').hide()
-        $('#buy-prompt6').hide()
-        $(document).off('keyup');
-    })
+    }
 
-    $('#cursed-relic-desc2').hide()
-    $('#buy-prompt7').hide()
-
-    $('#cursed-relic2').on('mouseenter', function () {
-        $('#cursed-relic-desc2').show()
-        $('#buy-prompt7').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
-            }
-        })
-    }).on('mouseleave', function () {
-        $('#cursed-relic-desc2').hide()
-        $('#buy-prompt7').hide()
-        $(document).off('keyup');
-    })
-
-    $('#cursed-relic-desc3').hide()
-    $('#buy-prompt8').hide()
-
-    $('#cursed-relic3').on('mouseenter', function () {
-        $('#cursed-relic-desc3').show()
-        $('#buy-prompt8').show()
-        $(document).on('keyup', function (e) {
-            if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
-            }
-        })
-    }).on('mouseleave', function () {
-        $('#cursed-relic-desc3').hide()
-        $('#buy-prompt8').hide()
-        $(document).off('keyup');
-    })
-
-
-
+    let doctorRelicBought = false
     $('#doctor-relic-desc').hide()
     $('#buy-prompt9').hide()
 
     $('#doctor-relic').on('mouseenter', function () {
-        $('#doctor-relic-desc').show()
-        $('#buy-prompt9').show()
+        if (doctorRelicBought === false) {
+            $('#doctor-relic-desc').show()
+            $('#buy-prompt9').show()
+        }
         $(document).on('keyup', function (e) {
             if (e.key === 'f') {
-                // Action for 'f' key press
-                console.log('F key pressed while hovering relic1');
+                $(`#doctor-relic-cost`).text('X')
+                $(`#doctor-relic-img`).attr('src', `/img/empty_slot.png`)
+                $(`#doctor-relic-name`).text('(Empty)')
+                $(`#doctor-relic-desc`).text('')
+                $(`#doctor-relic-desc`).hide()
+                $(`#buy-prompt9`).hide()
+                $(document).off('keyup');
+                doctorRelicBought = true
             }
         })
     }).on('mouseleave', function () {
@@ -226,6 +159,7 @@ $(document).ready(function () {
 
     function refreshShop() {
         //relics
+        relicBought = [false, false, false, false]
         if (relicDeck.length < 4) {
             shuffleRelics()
         }
@@ -240,10 +174,12 @@ $(document).ready(function () {
         //arcana
 
         //cursed relics
+        cursedRelicBought = [false, false, false]
         if (cursedRelicDeck.length < 3) {
             shuffleCursedRelics()
         }
         for (let i = 1; i < 4; i++) {
+            $(`#cursed-relic-cost${i}`).text(relicDeck[0].cost)
             $(`#cursed-relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${cursedRelicDeck[0].img}`)
             $(`#cursed-relic-name${i}`).text(cursedRelicDeck[0].name)
             $(`#cursed-relic-desc${i}`).text(cursedRelicDeck[0].description)
@@ -265,6 +201,7 @@ $(document).ready(function () {
             if (doctorRelicDeck.length === 0) {
                 shuffleDoctorRelics()
             }
+            $(`#doctor-relic-cost`).text('1 Random Arcana')
             $(`#doctor-relic-img`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${doctorRelicDeck[0].img}`)
             $(`#doctor-relic-name`).text(doctorRelicDeck[0].name)
             $(`#doctor-relic-desc`).text(doctorRelicDeck[0].description)
