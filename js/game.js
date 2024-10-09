@@ -22,11 +22,19 @@ $(document).ready(function () {
     $('#relic1').on('mouseenter', function () {
         $('#relic-desc1').show()
         $('#buy-prompt1').show()
-    })
-
-    $('#relic1').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                $(`#relic-img1`).attr('src', `/img/empty_slot.png`)
+                $(`#relic-name1`).text('(Empty)')
+                $(`#relic-desc1`).text('')
+                $('#relic-desc1').hide()
+                $(document).off('keyup');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#relic-desc1').hide()
         $('#buy-prompt1').hide()
+        $(document).off('keyup');
     })
 
     $('#relic-desc2').hide()
@@ -35,11 +43,16 @@ $(document).ready(function () {
     $('#relic2').on('mouseenter', function () {
         $('#relic-desc2').show()
         $('#buy-prompt2').show()
-    })
-
-    $('#relic2').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#relic-desc2').hide()
         $('#buy-prompt2').hide()
+        $(document).off('keyup');
     })
 
     $('#relic-desc3').hide()
@@ -48,11 +61,16 @@ $(document).ready(function () {
     $('#relic3').on('mouseenter', function () {
         $('#relic-desc3').show()
         $('#buy-prompt3').show()
-    })
-
-    $('#relic3').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#relic-desc3').hide()
         $('#buy-prompt3').hide()
+        $(document).off('keyup');
     })
 
     $('#relic-desc4').hide()
@@ -61,11 +79,16 @@ $(document).ready(function () {
     $('#relic4').on('mouseenter', function () {
         $('#relic-desc4').show()
         $('#buy-prompt4').show()
-    })
-
-    $('#relic4').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#relic-desc4').hide()
         $('#buy-prompt4').hide()
+        $(document).off('keyup');
     })
 
     $('#healing-desc').hide()
@@ -74,11 +97,16 @@ $(document).ready(function () {
     $('#healing').on('mouseenter', function () {
         $('#healing-desc').show()
         $('#buy-prompt5').show()
-    })
-
-    $('#healing').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#healing-desc').hide()
         $('#buy-prompt5').hide()
+        $(document).off('keyup');
     })
 
 
@@ -89,11 +117,16 @@ $(document).ready(function () {
     $('#cursed-relic1').on('mouseenter', function () {
         $('#cursed-relic-desc1').show()
         $('#buy-prompt6').show()
-    })
-
-    $('#cursed-relic1').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#cursed-relic-desc1').hide()
         $('#buy-prompt6').hide()
+        $(document).off('keyup');
     })
 
     $('#cursed-relic-desc2').hide()
@@ -102,11 +135,16 @@ $(document).ready(function () {
     $('#cursed-relic2').on('mouseenter', function () {
         $('#cursed-relic-desc2').show()
         $('#buy-prompt7').show()
-    })
-
-    $('#cursed-relic2').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#cursed-relic-desc2').hide()
         $('#buy-prompt7').hide()
+        $(document).off('keyup');
     })
 
     $('#cursed-relic-desc3').hide()
@@ -115,11 +153,16 @@ $(document).ready(function () {
     $('#cursed-relic3').on('mouseenter', function () {
         $('#cursed-relic-desc3').show()
         $('#buy-prompt8').show()
-    })
-
-    $('#cursed-relic3').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#cursed-relic-desc3').hide()
         $('#buy-prompt8').hide()
+        $(document).off('keyup');
     })
 
 
@@ -130,11 +173,16 @@ $(document).ready(function () {
     $('#doctor-relic').on('mouseenter', function () {
         $('#doctor-relic-desc').show()
         $('#buy-prompt9').show()
-    })
-
-    $('#doctor-relic').on('mouseleave', function () {
+        $(document).on('keyup', function (e) {
+            if (e.key === 'f') {
+                // Action for 'f' key press
+                console.log('F key pressed while hovering relic1');
+            }
+        })
+    }).on('mouseleave', function () {
         $('#doctor-relic-desc').hide()
         $('#buy-prompt9').hide()
+        $(document).off('keyup');
     })
 
     let relicDeck = []
