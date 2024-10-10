@@ -15,7 +15,7 @@ $('#modal-btn').on('click', function () {
     }
 })
 
-let gold = 300
+let gold = 3000
 let gems = 0
 let relicInventory = []
 
@@ -70,10 +70,15 @@ $('#healing').on('mouseenter', function () {
         if (e.key === 'f') {
             if (gold >= 100) {
                 gold -= 100
+                if (checkIfHaveRelic('Royal_Jelly') === true) {
+                    potionHealing = 1.4
+                }
                 currentHP *= potionHealing
-                if (potionHealing != 1) {
-                    potionHealing -= 0.05
-                    $('#healing-amt').text(((potionHealing - 1) * 100))
+                if (Math.ceil(potionHealing) != 1) {
+                    if (checkIfHaveRelic('Royal_Jelly') === false) {
+                        potionHealing -= 0.05
+                    }
+                    $('#healing-amt').text(Math.ceil((potionHealing - 1) * 100))
                 }
                 if (currentHP > maxHP) {
                     currentHP = maxHP
@@ -243,3 +248,8 @@ function refreshShop() {
     }
 }
 refreshShop()
+
+function checkIfHaveRelic(relicsName) {
+    let boolean = relicInventory.find(relic => relic.name === relicsName)
+    return boolean
+}

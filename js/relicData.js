@@ -9,13 +9,13 @@ let relics = [
         name: `Amulet of Sundering`,
         img: 'Amulet_of_Sundering.png',
         cost: 150,
-        description: 'All damage you inflict during your turn is increased by X',
+        description: '',
     },
     {
         name: `Analytical Monocle`,
         img: 'Analytical_Monocle.png',
         cost: 150,
-        description: 'The first arcana you cast in your turn is a crit',
+        description: '',
     },
     {
         name: `Ancient Fountain Pen`,
@@ -1107,7 +1107,7 @@ let relics = [
         name: `Royal Jelly`,
         img: 'Royal_Jelly.png',
         cost: 125,
-        description: '',
+        description: `Healing potions no longer decrease in effectiveness everytime they're used!`,
     },
     {
         name: `Rubber Raincoat`,
