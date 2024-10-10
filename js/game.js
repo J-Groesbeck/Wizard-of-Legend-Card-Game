@@ -15,6 +15,10 @@ $('#modal-btn').on('click', function () {
     }
 })
 
+let gold = 300
+let gems = 0
+let relicInventory = []
+
 let relicBought = [false, false, false, false]
 
 for (let i = 1; i < 5; i++) {
@@ -27,14 +31,22 @@ for (let i = 1; i < 5; i++) {
         }
         $(document).on('keyup', function (e) {
             if (e.key === 'f') {
-                $(`#relic-cost${i}`).text('X')
-                $(`#relic-img${i}`).attr('src', `/img/empty_slot.png`)
-                $(`#relic-name${i}`).text('(Empty)')
-                $(`#relic-desc${i}`).text('')
-                $(`#relic-desc${i}`).hide()
-                $(`#buy-prompt${i}`).hide()
-                $(document).off('keyup');
-                relicBought[(i - 1)] = true
+                let relicCost = $(`#relic-cost${i}`).text()
+                if (gold >= relicCost) {
+                    gold -= relicCost
+                    let relicName = $(`#relic-name${i}`).text()
+                    let relicIndex = relics.findIndex(relic => relic.name === relicName)
+                    relicInventory.push(relics[relicIndex]);
+                    relics.splice(relicIndex, 1);
+                    $(`#relic-cost${i}`).text('X')
+                    $(`#relic-img${i}`).attr('src', `/img/empty_slot.png`)
+                    $(`#relic-name${i}`).text('(Empty)')
+                    $(`#relic-desc${i}`).text('')
+                    $(`#relic-desc${i}`).hide()
+                    $(`#buy-prompt${i}`).hide()
+                    $(document).off('keyup');
+                    relicBought[(i - 1)] = true
+                }
             }
         })
     }).on('mouseleave', function () {
@@ -44,6 +56,10 @@ for (let i = 1; i < 5; i++) {
     })
 }
 
+let currentHP = 400
+let maxHP = 500
+let potionHealing = 1.4
+
 $('#healing-desc').hide()
 $('#buy-prompt5').hide()
 
@@ -52,7 +68,17 @@ $('#healing').on('mouseenter', function () {
     $('#buy-prompt5').show()
     $(document).on('keyup', function (e) {
         if (e.key === 'f') {
-
+            if (gold >= 100) {
+                gold -= 100
+                currentHP *= potionHealing
+                if (potionHealing != 1) {
+                    potionHealing -= 0.05
+                    $('#healing-amt').text(((potionHealing - 1) * 100))
+                }
+                if (currentHP > maxHP) {
+                    currentHP = maxHP
+                }
+            }
         }
     })
 }).on('mouseleave', function () {
@@ -73,14 +99,22 @@ for (let i = 1; i < 4; i++) {
         }
         $(document).on('keyup', function (e) {
             if (e.key === 'f') {
-                $(`#cursed-relic-cost${i}`).text('X')
-                $(`#cursed-relic-img${i}`).attr('src', `/img/empty_slot.png`)
-                $(`#cursed-relic-name${i}`).text('(Empty)')
-                $(`#cursed-relic-desc${i}`).text('')
-                $(`#cursed-relic-desc${i}`).hide()
-                $(`#buy-prompt${i + 5}`).hide()
-                $(document).off('keyup');
-                cursedRelicBought[(i - 1)] = true
+                let cursedRelicCost = $(`#cursed-relic-cost${i}`).text()
+                if (gems >= cursedRelicCost) {
+                    gems -= cursedRelicCost
+                    let cursedRelicName = $(`#cursed-relic-name${i}`).text()
+                    let cursedRelicIndex = cursedRelics.findIndex(relic => relic.name === cursedRelicName)
+                    relicInventory.push(cursedRelics[cursedRelicIndex]);
+                    cursedRelics.splice(cursedRelicIndex, 1);
+                    $(`#cursed-relic-cost${i}`).text('X')
+                    $(`#cursed-relic-img${i}`).attr('src', `/img/empty_slot.png`)
+                    $(`#cursed-relic-name${i}`).text('(Empty)')
+                    $(`#cursed-relic-desc${i}`).text('')
+                    $(`#cursed-relic-desc${i}`).hide()
+                    $(`#buy-prompt${i + 5}`).hide()
+                    $(document).off('keyup');
+                    cursedRelicBought[(i - 1)] = true
+                }
             }
         })
     }).on('mouseleave', function () {
