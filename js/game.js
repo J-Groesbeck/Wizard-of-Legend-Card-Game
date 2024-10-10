@@ -178,7 +178,7 @@ function refreshShop() {
         shuffleCursedRelics()
     }
     for (let i = 1; i < 4; i++) {
-        $(`#cursed-relic-cost${i}`).text(relicDeck[0].cost)
+        $(`#cursed-relic-cost${i}`).text('25')
         $(`#cursed-relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${cursedRelicDeck[0].img}`)
         $(`#cursed-relic-name${i}`).text(cursedRelicDeck[0].name)
         $(`#cursed-relic-desc${i}`).text(cursedRelicDeck[0].description)
