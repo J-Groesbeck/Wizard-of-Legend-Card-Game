@@ -70,12 +70,12 @@ $('#healing').on('mouseenter', function () {
         if (e.key === 'f') {
             if (gold >= 100) {
                 gold -= 100
-                if (checkIfHaveRelic('Royal_Jelly') === true) {
+                if (checkIfHaveRelic('Royal Jelly') === true) {
                     potionHealing = 1.4
                 }
                 currentHP *= potionHealing
                 if (Math.ceil(potionHealing) != 1) {
-                    if (checkIfHaveRelic('Royal_Jelly') === false) {
+                    if (checkIfHaveRelic('Royal Jelly') === false) {
                         potionHealing -= 0.05
                     }
                     $('#healing-amt').text(Math.ceil((potionHealing - 1) * 100))
@@ -250,6 +250,6 @@ function refreshShop() {
 refreshShop()
 
 function checkIfHaveRelic(relicsName) {
-    let boolean = relicInventory.find(relic => relic.name === relicsName)
+    let boolean = relicInventory.some(relic => relic.name === relicsName)
     return boolean
 }

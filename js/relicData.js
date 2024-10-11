@@ -705,7 +705,7 @@ let relics = [
         name: `Relic Rewards Card`,
         img: 'Relic_Rewards_Card.png',
         cost: 100,
-        description: '',
+        description: 'All gold costs for relics are discounted! (20%)',
     },
     {
         name: `Ring of Reserves`,
