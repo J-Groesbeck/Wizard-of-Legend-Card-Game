@@ -202,7 +202,11 @@ function refreshShop() {
         shuffleRelics()
     }
     for (let i = 1; i < 5; i++) {
-        $(`#relic-cost${i}`).text(relicDeck[0].cost)
+        if (checkIfHaveRelic('Relic Rewards Card')) {
+            $(`#relic-cost${i}`).text(relicDeck[0].cost * 0.8)
+        } else {
+            $(`#relic-cost${i}`).text(relicDeck[0].cost)
+        }
         $(`#relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${relicDeck[0].img}`)
         $(`#relic-name${i}`).text(relicDeck[0].name)
         $(`#relic-desc${i}`).text(relicDeck[0].description)
