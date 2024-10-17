@@ -16,7 +16,7 @@ $('#modal-btn').on('click', function () {
 })
 
 let gold = 3000
-let gems = 0
+let gems = 50
 let relicInventory = []
 
 let relicBought = [false, false, false, false]
@@ -32,20 +32,48 @@ for (let i = 1; i < 5; i++) {
         $(document).on('keyup', function (e) {
             if (e.key === 'f') {
                 let relicCost = $(`#relic-cost${i}`).text()
-                if (gold >= relicCost) {
-                    gold -= relicCost
+                if (gold >= relicCost || checkIfHaveRelic('Wallet of Vigor')) {
+                    if (checkIfHaveRelic('Wallet of Vigor') && !(gold >= relicCost)) {
+                        gold -= relicCost
+                        currentHP -= Math.abs(gold)
+                        if (currentHP <= 0) {
+                            gameOver()
+                        }
+                        gold = 0
+                    } else if (!(checkIfHaveRelic(`Raffle Ticket`) && Math.random() <= 5)) {
+                        gold -= relicCost
+                    }
                     let relicName = $(`#relic-name${i}`).text()
                     let relicIndex = relics.findIndex(relic => relic.name === relicName)
                     relicInventory.push(relics[relicIndex]);
                     relics.splice(relicIndex, 1);
-                    $(`#relic-cost${i}`).text('X')
-                    $(`#relic-img${i}`).attr('src', `/img/empty_slot.png`)
-                    $(`#relic-name${i}`).text('(Empty)')
-                    $(`#relic-desc${i}`).text('')
-                    $(`#relic-desc${i}`).hide()
-                    $(`#buy-prompt${i}`).hide()
-                    $(document).off('keyup');
-                    relicBought[(i - 1)] = true
+                    if (checkIfHaveRelic(`Supply Crate`)) {
+                        let $cost = relicDeck[1].cost
+                        if (checkIfHaveRelic('Relic Rewards Card')) {
+                            $cost *= .8
+                        }
+                        if (checkIfHaveRelic('Golden Armor of Envy')) {
+                            $cost *= 1.5
+                        }
+                        if (checkIfHaveRelic('Golden Saber of Envy')) {
+                            $cost *= 1.5
+                        }
+                        $(`#relic-cost${i}`).text(Math.floor($cost))
+                        $(`#relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${relicDeck[0].img}`)
+                        $(`#relic-name${i}`).text(relicDeck[0].name)
+                        $(`#relic-desc${i}`).text(relicDeck[0].description)
+                        relics.push(relicDeck[0]);
+                        relicDeck.splice(0, 1);
+                    } else {
+                        $(`#relic-cost${i}`).text('X')
+                        $(`#relic-img${i}`).attr('src', `/img/empty_slot.png`)
+                        $(`#relic-name${i}`).text('(Empty)')
+                        $(`#relic-desc${i}`).text('')
+                        $(`#relic-desc${i}`).hide()
+                        $(`#buy-prompt${i}`).hide()
+                        $(document).off('keyup');
+                        relicBought[(i - 1)] = true
+                    }
                 }
             }
         })
@@ -202,11 +230,17 @@ function refreshShop() {
         shuffleRelics()
     }
     for (let i = 1; i < 5; i++) {
+        let $cost = relicDeck[0].cost
         if (checkIfHaveRelic('Relic Rewards Card')) {
-            $(`#relic-cost${i}`).text(relicDeck[0].cost * 0.8)
-        } else {
-            $(`#relic-cost${i}`).text(relicDeck[0].cost)
+            $cost *= .8
         }
+        if (checkIfHaveRelic('Golden Armor of Envy')) {
+            $cost *= 1.5
+        }
+        if (checkIfHaveRelic('Golden Saber of Envy')) {
+            $cost *= 1.5
+        }
+        $(`#relic-cost${i}`).text(Math.floor($cost))
         $(`#relic-img${i}`).attr('src', `https://j-groesbeck.github.io/Wizard-of-Legend-Card-Game/img/relics/${relicDeck[0].img}`)
         $(`#relic-name${i}`).text(relicDeck[0].name)
         $(`#relic-desc${i}`).text(relicDeck[0].description)
@@ -256,4 +290,8 @@ refreshShop()
 function checkIfHaveRelic(relicsName) {
     let boolean = relicInventory.some(relic => relic.name === relicsName)
     return boolean
+}
+
+function gameOver() {
+    console.log('You suck')
 }

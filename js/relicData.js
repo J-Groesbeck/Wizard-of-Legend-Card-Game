@@ -693,7 +693,7 @@ let relics = [
         name: `Raffle Ticket`,
         img: 'Raffle_Ticket.png',
         cost: 200,
-        description: '',
+        description: 'Adds a chance that any item purchased in the Chaos Trials will be free of charge! (5%)',
     },
     {
         name: `Reinforced Bracers`,
@@ -741,7 +741,7 @@ let relics = [
         name: `Supply Crate`,
         img: 'Supply_Crate.png',
         cost: 100,
-        description: '',
+        description: 'The relic and arcana stores instantly restock after a purchase! Health potions are in short supply and will not be restocked.',
     },
     {
         name: `Surefire Rocket`,
@@ -777,7 +777,7 @@ let relics = [
         name: `Wallet of Vigor`,
         img: 'Wallet_of_Vigor.png',
         cost: 100,
-        description: '',
+        description: `Enables you to purchase items with health when you don't have sufficient gold!`,
     },
     {
         name: `Watercolor Palette`,
@@ -1413,7 +1413,7 @@ let cursedRelics = [
         name: `Golden Armor of Envy`,
         img: 'Golden_Armor_of_Envy.png',
         cost: 25,
-        description: '',
+        description: 'Increases armor but store prices are increased! (+16% | +50%)',
     },
     {
         name: `Golden Contract`,
@@ -1425,13 +1425,13 @@ let cursedRelics = [
         name: `Golden Saber of Envy`,
         img: 'Golden_Saber_of_Envy.png',
         cost: 25,
-        description: '',
+        description: 'Increases damage but store prices are increased! (+20% | +50%)',
     },
     {
         name: `Graduation Bouquet`,
         img: 'Graduation_Bouquet.png',
         cost: 25,
-        description: '',
+        description: 'Increases damage but store prices are increased! (+20% | +50%)',
     },
     {
         name: `Heartrender's Amulet`,
