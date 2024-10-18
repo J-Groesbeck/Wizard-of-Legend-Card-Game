@@ -44,6 +44,7 @@ for (let i = 1; i < 5; i++) {
                         gold -= relicCost
                     }
                     let relicName = $(`#relic-name${i}`).text()
+                    boughtRelicEffect(relicName)
                     let relicIndex = relics.findIndex(relic => relic.name === relicName)
                     relicInventory.push(relics[relicIndex]);
                     relics.splice(relicIndex, 1);
@@ -88,6 +89,27 @@ let currentHP = 400
 let maxHP = 500
 let potionHealing = 1.4
 
+function boughtRelicEffect(rName) {
+    if (rName === 'Relic Rewards Card') {
+        for (i = 1; i < 5; i++) {
+            $(`#relic-cost${i}`).text($(`#relic-cost${i}`).text() * .8)
+        }
+    }
+    if (rName === 'Golden Armor of Envy') {
+        for (i = 1; i < 5; i++) {
+            $(`#relic-cost${i}`).text($(`#relic-cost${i}`).text() * 1.5)
+        }
+    }
+    if (rName === 'Golden Saber of Envy') {
+        for (i = 1; i < 5; i++) {
+            $(`#relic-cost${i}`).text($(`#relic-cost${i}`).text() * 1.5)
+        }
+    }
+    if (rName === 'Royal Jelly') {
+        potionHealing = 1.4
+    }
+}
+
 $('#healing-desc').hide()
 $('#buy-prompt5').hide()
 
@@ -98,9 +120,6 @@ $('#healing').on('mouseenter', function () {
         if (e.key === 'f') {
             if (gold >= 100) {
                 gold -= 100
-                if (checkIfHaveRelic('Royal Jelly') === true) {
-                    potionHealing = 1.4
-                }
                 currentHP *= potionHealing
                 if (Math.ceil(potionHealing) != 1) {
                     if (checkIfHaveRelic('Royal Jelly') === false) {
@@ -136,6 +155,7 @@ for (let i = 1; i < 4; i++) {
                 if (gems >= cursedRelicCost) {
                     gems -= cursedRelicCost
                     let cursedRelicName = $(`#cursed-relic-name${i}`).text()
+                    boughtRelicEffect(cursedRelicName)
                     let cursedRelicIndex = cursedRelics.findIndex(relic => relic.name === cursedRelicName)
                     relicInventory.push(cursedRelics[cursedRelicIndex]);
                     cursedRelics.splice(cursedRelicIndex, 1);
