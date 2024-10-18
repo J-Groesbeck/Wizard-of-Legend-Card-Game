@@ -88,6 +88,9 @@ for (let i = 1; i < 5; i++) {
 let currentHP = 400
 let maxHP = 500
 let potionHealing = 1.4
+let dmgMult = 1
+let critChance = 0.05
+let critDmg = 2
 
 function boughtRelicEffect(rName) {
     if (rName === 'Relic Rewards Card') {
@@ -107,6 +110,15 @@ function boughtRelicEffect(rName) {
     }
     if (rName === 'Royal Jelly') {
         potionHealing = 1.4
+    }
+    if (rName === 'Amulet of Sundering') {
+        dmgMult += 0.08
+    }
+    if (rName === 'Analytical Monocle') {
+        critChance += 0.08
+    }
+    if (rName === `Assassin's Blade`) {
+        critDmg += 0.5
     }
 }
 

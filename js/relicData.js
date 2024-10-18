@@ -9,13 +9,13 @@ let relics = [
         name: `Amulet of Sundering`,
         img: 'Amulet_of_Sundering.png',
         cost: 150,
-        description: '',
+        description: 'Increases all damage dealt! (+8%)',
     },
     {
         name: `Analytical Monocle`,
         img: 'Analytical_Monocle.png',
         cost: 150,
-        description: '',
+        description: 'Increases critical hit chance! (+8%)',
     },
     {
         name: `Ancient Fountain Pen`,
@@ -27,7 +27,7 @@ let relics = [
         name: `Assassin's Blade`,
         img: 'Assassins_Blade.png',
         cost: 150,
-        description: '',
+        description: 'Increases critical hit damage! (+50%)',
     },
     {
         name: `Auditor's Talisman`,
