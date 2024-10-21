@@ -89,6 +89,11 @@ let currentHP = 400
 let maxHP = 500
 let potionHealing = 1.4
 let dmgMult = 1
+let airDmgMult = 0
+let fireDmgMult = 0
+let waterDmgMult = 0
+let earthDmgMult = 0
+let lightningDmgMult = 0
 let critChance = 0.05
 let critDmg = 2
 
@@ -119,6 +124,25 @@ function boughtRelicEffect(rName) {
     }
     if (rName === `Assassin's Blade`) {
         critDmg += 0.5
+    }
+    if (rName === `Battery of Taranis`) {
+        lightningDmgMult += 0.12
+    }
+    if (rName === `Chaos Scanner`) {
+        dmgMult += 0.04
+    }
+    if (rName === `Ebon Wolf's Cloak`) {
+        airDmgMult -= 0.12
+        fireDmgMult += 0.12
+        waterDmgMult -= 0.12
+        earthDmgMult -= 0.12
+        lightningDmgMult += 0.12
+    }
+    if (rName === `Gaia's Shovel`) {
+        earthDmgMult += 0.12
+    }
+    if (rName === `Idealist's Mirror`) {
+        currentHP = maxHP
     }
 }
 

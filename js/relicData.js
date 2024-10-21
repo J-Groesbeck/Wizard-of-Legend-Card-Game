@@ -3,7 +3,7 @@ let relics = [
         name: `Agni's Sparkler`,
         img: 'Agnis_Sparkler.png',
         cost: 175,
-        description: 'Doubles the damage of burn you inflict',
+        description: '',
     },
     {
         name: `Amulet of Sundering`,
@@ -45,7 +45,7 @@ let relics = [
         name: `Battery of Taranis`,
         img: 'Battery_of_Taranis.png',
         cost: 150,
-        description: '',
+        description: 'Increases lightning damage! (+12%)',
     },
     {
         name: `Berserker's Axe`,
@@ -111,13 +111,13 @@ let relics = [
         name: `Chaos Scanner`,
         img: 'Chaos_Scanner.png',
         cost: 150,
-        description: '',
+        description: 'Finds the weak points in enemies! Reduces health bars for non-boss enemies (-4%), slightly increases all damage dealt! (+4%)',
     },
     {
         name: `Chaos Visor`,
         img: 'Chaos_Visor.png',
         cost: 125,
-        description: '',
+        description: 'Gain the ability to forsee the trajectory of your arcana! Increases critical hit chance and damage of projectile arcana! (+6% | +40%)',
     },
     {
         name: `Claws of Tomo`,
@@ -171,7 +171,7 @@ let relics = [
         name: `Ebon Wolf's Cloak`,
         img: 'Ebon_Wolfs_Cloak.png',
         cost: 150,
-        description: '',
+        description: 'Increases fire and lightning arcana damage, but lowers damage for other elements! (+12% | -12%)',
     },
     {
         name: `Electrifying Smock`,
