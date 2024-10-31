@@ -87,7 +87,10 @@ for (let i = 1; i < 5; i++) {
 
 let currentHP = 400
 let maxHP = 500
-let potionHealing = 1.4
+let shield = 0
+let potionCost = 100
+let potionHealing = .4
+let healMult = 1
 let dmgMult = 1
 let airDmgMult = 0
 let fireDmgMult = 0
@@ -96,6 +99,20 @@ let earthDmgMult = 0
 let lightningDmgMult = 0
 let critChance = 0.05
 let critDmg = 2
+let critHealChance = 0
+let evadeChance = 0
+let armor = 1
+let airResist = 1
+let fireResist = 1
+let waterResist = 1
+let earthResist = 1
+let lightningResist = 1
+let goldMult = 1
+
+let bachRevive = 0
+let ellaHits = 0
+let kaliRevive = false
+let pazuRevive = false
 
 function boughtRelicEffect(rName) {
     if (rName === 'Relic Rewards Card') {
@@ -107,11 +124,13 @@ function boughtRelicEffect(rName) {
         for (i = 1; i < 5; i++) {
             $(`#relic-cost${i}`).text($(`#relic-cost${i}`).text() * 1.5)
         }
+        armor -= .16
     }
     if (rName === 'Golden Saber of Envy') {
         for (i = 1; i < 5; i++) {
             $(`#relic-cost${i}`).text($(`#relic-cost${i}`).text() * 1.5)
         }
+        dmgMult += .2
     }
     if (rName === 'Royal Jelly') {
         potionHealing = 1.4
@@ -144,6 +163,83 @@ function boughtRelicEffect(rName) {
     if (rName === `Idealist's Mirror`) {
         currentHP = maxHP
     }
+    if (rName === `Idealist's Scorecard`) {
+        currentHP = maxHP
+    }
+    if (rName === `Idealist's Vest`) {
+        currentHP = maxHP
+    }
+    if (rName === `Ifrit's Matchstick`) {
+        fireDmgMult += 0.12
+    }
+    if (rName === `Rudra's Pinwheel`) {
+        airDmgMult += 0.12
+    }
+    if (rName === `Shiva's Water Bottle`) {
+        waterDmgMult += 0.12
+    }
+    if (rName === 'Antiquated Tabi') {
+        evadeChance += 0.08
+    }
+    if (rName === 'Auger of Poetry') {
+        earthResist -= 0.25
+    }
+    if (rName === `Bach's Escape Key`) {
+        bachRevive = 1
+    }
+    if (rName === 'Catalytic Vial') {
+        critHealChance += 0.1
+    }
+    if (rName === `Ella's Glass Kite`) {
+        ellaHits = 5
+    }
+    if (rName === 'Elven Ears') {
+        healMult += .2
+    }
+    if (rName === `Euphie's Shawl`) {
+        armor -= .05
+    }
+    if (rName === `Giant's Heart`) {
+        maxHP += 50
+        currentHP += 50
+    }
+    if (rName === 'Insulated Vest') {
+        lightningResist += 0.25
+    }
+    if (rName === `Kali's Flower Diadem`) {
+        kaliRevive = true
+    }
+    if (rName === `Pazu's Favorite Hat`) {
+        pazuRevive = true
+    }
+    if (rName === 'Resolute Svalinn') {
+        fireResist += 0.25
+    }
+    if (rName === 'Three Gorges Bulwark') {
+        waterResist += 0.25
+    }
+    if (rName === `Glove of Midas`) {
+        goldMult += .15
+    }
+    if (rName === `Catalytic Tonic`) {
+        critHealChance += .25
+    }
+    if (rName === `Critical Placebos`) {
+        critChance += .12
+    }
+    if (rName === `Health Care Card`) {
+        potionCost = 75
+    }
+    if (rName === `Messy Prescription`) {
+        healMult += .50
+    }
+    if (rName === `Bewitching Glue`) {
+        dmgMult += .2
+    }
+}
+
+function gainGold(amt) {
+    return amt * goldMult
 }
 
 $('#healing-desc').hide()
@@ -154,17 +250,14 @@ $('#healing').on('mouseenter', function () {
     $('#buy-prompt5').show()
     $(document).on('keyup', function (e) {
         if (e.key === 'f') {
-            if (gold >= 100) {
-                gold -= 100
-                currentHP *= potionHealing
-                if (Math.ceil(potionHealing) != 1) {
-                    if (checkIfHaveRelic('Royal Jelly') === false) {
+            if (gold >= potionCost) {
+                gold -= potionCost
+                heal(maxHP * potionHealing)
+                if (Math.ceil(potionHealing) != 0) {
+                    if (!(checkIfHaveRelic('Royal Jelly'))) {
                         potionHealing -= 0.05
                     }
-                    $('#healing-amt').text(Math.ceil((potionHealing - 1) * 100))
-                }
-                if (currentHP > maxHP) {
-                    currentHP = maxHP
+                    $('#healing-amt').text(Math.ceil(potionHealing * 100))
                 }
             }
         }
@@ -174,6 +267,26 @@ $('#healing').on('mouseenter', function () {
     $('#buy-prompt5').hide()
     $(document).off('keyup');
 })
+
+function heal(amt) {
+    amt *= healMult
+    if (Math.random() < critHealChance) {
+        amt *= 2
+    }
+
+    currentHP += amt
+
+    if (checkIfHaveRelic('Takeout Box') && currentHP > maxHP) {
+        gainShield(currentHP - maxHP)
+        currentHP = maxHP
+    } else if (currentHP > maxHP) {
+        currentHP = maxHP
+    }
+}
+
+function gainShield(amt) {
+    shield += amt
+}
 
 let cursedRelicBought = [false, false, false]
 
@@ -349,5 +462,13 @@ function checkIfHaveRelic(relicsName) {
 }
 
 function gameOver() {
-    console.log('You suck')
+    if (Math.random() < bachRevive) {
+        bachRevive /= 2
+    } else if (kaliRevive) {
+
+    } else if (pazuRevive) {
+
+    } else {
+        console.log('You suck')
+    }
 }

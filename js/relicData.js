@@ -327,7 +327,7 @@ let relics = [
         name: `Rudra's Pinwheel`,
         img: 'Rudras_Pinwheel.png',
         cost: 150,
-        description: '',
+        description: 'Increases air damage! (+12%)',
     },
     {
         name: `Secret Wild Card`,
@@ -345,7 +345,7 @@ let relics = [
         name: `Shiva's Water Bottle`,
         img: 'Shivas_Water_Bottle.png',
         cost: 150,
-        description: '',
+        description: 'Increases water damage (includes ice)! (+12%)',
     },
     {
         name: `Sidewinder's Badge`,
@@ -795,7 +795,7 @@ let relics = [
         name: `Antiquated Tabi`,
         img: 'Antiquated_Tabi.png',
         cost: 125,
-        description: '',
+        description: 'Adds a chance to evade attacks! (+8% evade chance)',
     },
     {
         name: `Armor of Resolve`,
@@ -807,13 +807,13 @@ let relics = [
         name: `Auger of Poetry`,
         img: 'Auger_of_Poetry.png',
         cost: 125,
-        description: '',
+        description: 'Increases resistance to earth based attacks! (+25%)',
     },
     {
         name: `Bach's Escape Key`,
         img: 'Bachs_Escape_Key.png',
         cost: 175,
-        description: '',
+        description: 'Adds a chance to resist defeat (starts off guaranteed), but the chance halves each time it activates! This relic is destroyed when dropped.',
     },
     {
         name: `Blades of Sympathy`,
@@ -885,7 +885,7 @@ let relics = [
         name: `Ella's Glass Kite`,
         img: 'Ellas_Glass_Kite.png',
         cost: 125,
-        description: '',
+        description: 'Completely guard against attacks and makes you invulnerable for a brief period afterwards! This relic will break after a number of hits and is destroyed when dropped. (Max 5 hits before the relic breaks)',
     },
     {
         name: `Elven Ears`,
@@ -1268,8 +1268,8 @@ let cursedRelics = [
     {
         name: `Aberrant Deck`,
         img: 'Aberrant_Deck.png',
-        cost: 25,
-        description: '',
+        cost: 'X',
+        description: 'REMOVE FROM GAME',
     },
     {
         name: `Abhorrent Cologne`,
@@ -1334,8 +1334,8 @@ let cursedRelics = [
     {
         name: `Conga Drum Set`,
         img: 'Conga_Drum_Set.png',
-        cost: 25,
-        description: '',
+        cost: 'X',
+        description: 'REMOVE FROM GAME',
     },
     {
         name: `Cracked Sapphire Key`,
@@ -1358,8 +1358,8 @@ let cursedRelics = [
     {
         name: `Curse of the Forager`,
         img: 'Curse_of_the_Forager.png',
-        cost: 25,
-        description: '',
+        cost: 'X',
+        description: 'REMOVE FROM GAME',
     },
     {
         name: `Death's Scythe`,
@@ -1490,8 +1490,8 @@ let cursedRelics = [
     {
         name: `Makeshift Bridge`,
         img: 'Makeshift_Bridge.png',
-        cost: 25,
-        description: '',
+        cost: 'X',
+        description: 'REMOVE FROM GAME',
     },
     {
         name: `Melting Pot`,
@@ -1568,8 +1568,8 @@ let cursedRelics = [
     {
         name: `Retro Floor Plan`,
         img: 'Retro_Floor_Plan.png',
-        cost: 25,
-        description: '',
+        cost: 'X',
+        description: 'REMOVE FROM GAME',
     },
     {
         name: `Rulebook of Thieves`,
@@ -1580,8 +1580,8 @@ let cursedRelics = [
     {
         name: `Rules of Contingency`,
         img: 'Rules_of_Contingency.png',
-        cost: 25,
-        description: '',
+        cost: 'X',
+        description: 'REMOVE FROM GAME',
     },
     {
         name: `Sharpened Stylus`,
