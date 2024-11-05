@@ -32,8 +32,12 @@ for (let i = 1; i < 5; i++) {
         $(document).on('keyup', function (e) {
             if (e.key === 'f') {
                 let relicCost = $(`#relic-cost${i}`).text()
-                if (gold >= relicCost || checkIfHaveRelic('Wallet of Vigor')) {
-                    if (checkIfHaveRelic('Wallet of Vigor') && !(gold >= relicCost)) {
+                if (gold >= relicCost || checkIfHaveRelic('Wallet of Vigor') || checkIfHaveRelic('Wallet of Splendor') && (gold + gems) >= relicCost) {
+                    if(checkIfHaveRelic('Wallet of Splendor') && (gold + gems) >= relicCost) {
+                        gold -= relicCost
+                        gems -= Math.abs(gold)
+                        gold = 0
+                    } else if (checkIfHaveRelic('Wallet of Vigor') && !(gold >= relicCost)) {
                         gold -= relicCost
                         currentHP -= Math.abs(gold)
                         if (currentHP <= 0) {
@@ -113,6 +117,8 @@ let bachRevive = 0
 let ellaHits = 0
 let kaliRevive = false
 let pazuRevive = false
+let haloRevive = false
+let loan = 0
 
 function boughtRelicEffect(rName) {
     if (rName === 'Relic Rewards Card') {
@@ -236,9 +242,59 @@ function boughtRelicEffect(rName) {
     if (rName === `Bewitching Glue`) {
         dmgMult += .2
     }
+    if (rName === 'Crimson Clover') {
+        critChance += .15
+    }
+    if (rName === `Glass Cannon`) {
+        dmgMult += .2
+        maxHP *= .7
+    }
+    if (rName === 'Graduation Bouquet') {
+        goldMult /= 2
+    }
+    if (rName === `Heartrender's Amulet`) {
+        maxHP *= .6
+    }
+    if (rName === `Horned Halo`) {
+        haloRevive = true
+        currentHP /= 2
+    }
+    if (rName === `Jeremiah's Needle`) {
+        critDmg += 1
+        critChance -= .25
+    }
+    if (rName === `Magician's Wand`) {
+        dmgMult += .2
+    }
+    if (rName === `Nog's Heavenly Boots`) {
+        evadeChance += .45
+    }
+    if (rName === `Ominous Loan Note`) {
+        gold += 250
+        loan = 250
+    }
+    if (rName === `Oversized Needle`) {
+        dmgMult *= .25
+        critDmg += 8
+    }
+    if (rName === `Tipsy Gladius`) {
+        evadeChance += .15
+        critChance /= 2
+    }
+    if (rName === `Tortoise Shield`) {
+        dmgMult -= .2
+        armor -= .2
+    }
 }
 
 function gainGold(amt) {
+    if(loan > 0) {
+        amt -= loan
+        if (amt < 0) {
+            loan = Math.abs(amt)
+            amt = 0
+        }
+    }
     return amt * goldMult
 }
 
@@ -467,6 +523,8 @@ function gameOver() {
     } else if (kaliRevive) {
 
     } else if (pazuRevive) {
+
+    } else if (haloRevive) {
 
     } else {
         console.log('You suck')
