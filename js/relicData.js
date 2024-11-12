@@ -111,7 +111,7 @@ let relics = [
         name: `Chaos Scanner`,
         img: 'Chaos_Scanner.png',
         cost: 150,
-        description: 'Finds the weak points in enemies! Reduces health bars for non-boss enemies (-4%), slightly increases all damage dealt! (+4%)',
+        description: 'Finds the weak points in enemies! Reduces max HP for non-boss enemies (-8%)',
     },
     {
         name: `Chaos Visor`,
@@ -195,7 +195,7 @@ let relics = [
         name: `Gaia's Shovel`,
         img: 'Gaias_Shovel.png',
         cost: 150,
-        description: '',
+        description: 'Increases earth damage! (+12%)',
     },
     {
         name: `Gloves of Gambit`,
@@ -219,19 +219,19 @@ let relics = [
         name: `Idealist's Scorecard`,
         img: 'Idealists_Scorecard.png',
         cost: 300,
-        description: '',
+        description: 'Restores all health on pick up! Damage is increased every time a magic council member is defeated without taking damage (+10%)!',
     },
     {
         name: `Idealist's Vest`,
         img: 'Idealists_Vest.png',
         cost: 300,
-        description: '',
+        description: 'Restores all health on pick up! Increases all damage dealt while at full health (+20%)!',
     },
     {
         name: `Ifrit's Matchstick`,
         img: 'Ifrits_Matchstick.png',
         cost: 150,
-        description: '',
+        description: 'Increases fire damage! (+12%)',
     },
     {
         name: `Indra's Copper Pipe`,
@@ -579,7 +579,7 @@ let relics = [
         name: `Glove of Midas`,
         img: 'Glove_of_Midas.png',
         cost: 125,
-        description: '',
+        description: 'Increases gold gain! (+15%)',
     },
     {
         name: `Graduation Cap`,
@@ -795,7 +795,7 @@ let relics = [
         name: `Antiquated Tabi`,
         img: 'Antiquated_Tabi.png',
         cost: 125,
-        description: 'Adds a chance to evade attacks! (+8% evade chance)',
+        description: 'Adds a chance to evade attacks! (+8%)',
     },
     {
         name: `Armor of Resolve`,
@@ -891,7 +891,7 @@ let relics = [
         name: `Elven Ears`,
         img: 'Elven_Ears.png',
         cost: 125,
-        description: '',
+        description: 'Increases healing received from all sources! (+20%)',
     },
     {
         name: `Equestricap`,
@@ -903,7 +903,7 @@ let relics = [
         name: `Euphie's Shawl`,
         img: 'Euphies_Shawl.png',
         cost: 125,
-        description: '',
+        description: 'Increases armor! (+5%)',
     },
     {
         name: `Firstborn's Gauntlet`,
@@ -927,7 +927,7 @@ let relics = [
         name: `Giant's Heart`,
         img: 'Giants_Heart.png',
         cost: 125,
-        description: '',
+        description: 'Increases max health! (+50)',
     },
     {
         name: `Greased Boots`,
@@ -963,7 +963,7 @@ let relics = [
         name: `Insulated Vest`,
         img: 'Insulated_Vest.png',
         cost: 125,
-        description: '',
+        description: 'Increases resistance to lightning based attacks! (+25%)',
     },
     {
         name: `Ironclad Cardholder`,
@@ -987,7 +987,7 @@ let relics = [
         name: `Kali's Flower Diadem`,
         img: 'Kalis_Flower_Diadem.png',
         cost: 225,
-        description: '',
+        description: 'When taking damage that would defeat you, gain full signature charge and briefly become immune to defeat! Refreshes after bosses and minibosses.',
     },
     {
         name: `Leemo's Leaf`,
@@ -1047,7 +1047,7 @@ let relics = [
         name: `Pazu's Favorite Hat`,
         img: 'Pazus_Favorite_Hat.png',
         cost: 250,
-        description: '',
+        description: 'Revive with low health when defeated! This relic regenerates health when destroyed and is destroyed on use.',
     },
     {
         name: `Prismatic Vambrace`,
@@ -1095,7 +1095,7 @@ let relics = [
         name: `Resolute Svalinn`,
         img: 'Resolute_Svalinn.png',
         cost: 125,
-        description: '',
+        description: 'Increases resistance to fire based attacks! (+25%)',
     },
     {
         name: `Ring of Recycling`,
@@ -1173,7 +1173,7 @@ let relics = [
         name: `Takeout Box`,
         img: 'Takeout_Box.png',
         cost: 175,
-        description: '',
+        description: 'When healed for more than your maximum health, gain a shield equal to half of the excess heal amount!',
     },
     {
         name: `Tea of Mercy`,
@@ -1191,7 +1191,7 @@ let relics = [
         name: `Three Gorges Bulwark`,
         img: 'Three_Gorges_Bulwark.png',
         cost: 125,
-        description: '',
+        description: 'Increases resistance to water based attacks! (+25%)',
     },
     {
         name: `Tracking Suit`,
@@ -1216,21 +1216,27 @@ let relics = [
         img: 'Wings_of_Icarus.png',
         cost: 200,
         description: '',
+    },
+    {
+        name: `Catalytic Vial`,
+        img: 'Catalytic_Vial.png',
+        cost: 125,
+        description: 'Increases the chance of receiving critical heals! (+10%)',
     }
 ]
 
 let doctorRelics = [
     {
-        name: `Catalystic Tonic`,
+        name: `Catalytic Tonic`,
         img: 'Catalystic_Tonic.png',
         cost: '1 Random Arcana',
-        description: '',
+        description: 'Significantly increases the chance of receiving critical heals! (+25%)',
     },
     {
         name: `Critical Placebos`,
         img: 'Critical_Placebos.png',
         cost: '1 Random Arcana',
-        description: '',
+        description: 'Makes you believe all your attacks result in critical hits! (+12%)',
     },
     {
         name: `Elixir of Might`,
@@ -1242,13 +1248,13 @@ let doctorRelics = [
         name: `Health Care Card`,
         img: 'Health_Care_Card.png',
         cost: '1 Random Arcana',
-        description: '',
+        description: 'Receive a discount whenever you purchase potions from the store!',
     },
     {
         name: `Messy Prescription`,
         img: 'Messy_Prescription.png',
         cost: '1 Random Arcana',
-        description: '',
+        description: 'Significantly increases healing received from all sources! (+50%)',
     },
     {
         name: `Prescription Bottle`,
@@ -1305,7 +1311,7 @@ let cursedRelics = [
         name: `Bewitching Glue`,
         img: 'Bewitching_Glue.png',
         cost: 25,
-        description: '',
+        description: 'Increases all damage dealt but draw 1 less card at the start of your turn! (+20%)',
     },
     {
         name: `Blinding Binoculars`,
@@ -1347,7 +1353,7 @@ let cursedRelics = [
         name: `Crimson Clover`,
         img: 'Crimson_Clover.png',
         cost: 25,
-        description: '',
+        description: 'Critical hit chance is increased for you and all enemies! (+15%)',
     },
     {
         name: `Cruel Chess Clock`,
@@ -1401,7 +1407,7 @@ let cursedRelics = [
         name: `Glass Cannon`,
         img: 'Glass_Cannon.png',
         cost: 25,
-        description: '',
+        description: 'Damage increased but max health is reduced! (+20% | -30%)',
     },
     {
         name: `Glove of Patience`,
@@ -1431,19 +1437,19 @@ let cursedRelics = [
         name: `Graduation Bouquet`,
         img: 'Graduation_Bouquet.png',
         cost: 25,
-        description: 'Increases damage but store prices are increased! (+20% | +50%)',
+        description: 'Receive double relic drops, but lowers gold gain! (-50%)',
     },
     {
         name: `Heartrender's Amulet`,
         img: 'Heartrenders_Amulet.png',
         cost: 25,
-        description: '',
+        description: 'Max health is reduced but damage is increased as health gets lower! (-40% | up to +50%)',
     },
     {
         name: `Horned Halo`,
         img: 'Horned_Halo.png',
         cost: 25,
-        description: '',
+        description: 'Revive with low health when defeated but consume half of current health when picked up! This relic is destroyed on use.',
     },
     {
         name: `Jak's Ocarina`,
@@ -1455,7 +1461,7 @@ let cursedRelics = [
         name: `Jeremiah's Needle`,
         img: 'Jeremiahs_Needle.png',
         cost: 25,
-        description: '',
+        description: 'Increases critical hit damage but lowers critical hit chance! (+100% | -25%)',
     },
     {
         name: `Kugo's Stopwatch`,
@@ -1485,7 +1491,7 @@ let cursedRelics = [
         name: `Magician's Wand`,
         img: 'Magicians_Wand.png',
         cost: 25,
-        description: '',
+        description: `Increases damage (+20%) but start each turn with one less card play! Required for the [Magician's Outfit].`,
     },
     {
         name: `Makeshift Bridge`,
@@ -1515,7 +1521,7 @@ let cursedRelics = [
         name: `Nog's Heavenly Boots`,
         img: 'Nogs_Heavenly_Boots.png',
         cost: 25,
-        description: '',
+        description: 'Adds a significant chance to evade attacks but receive double damage! (+45%)',
     },
     {
         name: `Nox's Cloak`,
@@ -1527,7 +1533,7 @@ let cursedRelics = [
         name: `Ominous Loan Note`,
         img: 'Ominous_Loan_Note.png',
         cost: 25,
-        description: '',
+        description: 'Immediately receive a large sum of gold! All gold gained, with interest, goes towards paying off this debt. (+250 gold)',
     },
     {
         name: `Overpriced Insurance`,
@@ -1539,7 +1545,7 @@ let cursedRelics = [
         name: `Oversized Needle`,
         img: 'Oversized_Needle.png',
         cost: 25,
-        description: '',
+        description: 'Lowers all damage dealt but critical hit damage is significantly increased! (-75% | +800%)',
     },
     {
         name: `Paronomasicon`,
@@ -1629,7 +1635,7 @@ let cursedRelics = [
         name: `Tipsy Gladius`,
         img: 'Tipsy_Gladius.png',
         cost: 25,
-        description: '',
+        description: 'Increases chance to evade (+15%) but halves your current critical hit chance!',
     },
     {
         name: `Titan's Equilibrium`,
@@ -1641,7 +1647,7 @@ let cursedRelics = [
         name: `Tortoise Shield`,
         img: 'Tortoise_Shield.png',
         cost: 25,
-        description: '',
+        description: 'Increases armor but decreases damage! (+20% | -20%)',
     },
     {
         name: `Vampire's Fangs`,
@@ -1659,6 +1665,6 @@ let cursedRelics = [
         name: `Wallet of Splendor`,
         img: 'Wallet_of_Splendor.png',
         cost: 25,
-        description: '',
+        description: `Enables you to purchase items with chaos gems when you don't have sufficient gold!`,
     }
 ]

@@ -153,9 +153,6 @@ function boughtRelicEffect(rName) {
     if (rName === `Battery of Taranis`) {
         lightningDmgMult += 0.12
     }
-    if (rName === `Chaos Scanner`) {
-        dmgMult += 0.04
-    }
     if (rName === `Ebon Wolf's Cloak`) {
         airDmgMult -= 0.12
         fireDmgMult += 0.12
@@ -250,7 +247,7 @@ function boughtRelicEffect(rName) {
         maxHP *= .7
     }
     if (rName === 'Graduation Bouquet') {
-        goldMult /= 2
+        goldMult -= .5
     }
     if (rName === `Heartrender's Amulet`) {
         maxHP *= .6
@@ -333,7 +330,7 @@ function heal(amt) {
     currentHP += amt
 
     if (checkIfHaveRelic('Takeout Box') && currentHP > maxHP) {
-        gainShield(currentHP - maxHP)
+        gainShield((currentHP - maxHP) / 2)
         currentHP = maxHP
     } else if (currentHP > maxHP) {
         currentHP = maxHP
@@ -520,12 +517,13 @@ function checkIfHaveRelic(relicsName) {
 function gameOver() {
     if (Math.random() < bachRevive) {
         bachRevive /= 2
+        currentHP = maxHP * 0.10
     } else if (kaliRevive) {
-
+        currentHP = 25
     } else if (pazuRevive) {
-
+        currentHP = maxHP * 0.05 + 75
     } else if (haloRevive) {
-
+        currentHP = maxHP * 0.25
     } else {
         console.log('You suck')
     }
